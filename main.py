@@ -107,7 +107,10 @@ def Main():
             IconClient()
         elif choice == 5:
             BackgroundChanger()
-
+        elif choice == 6:
+            pass
+        elif choice == 7:
+            exit()
         else:
             Main()
     except KeyboardInterrupt:
