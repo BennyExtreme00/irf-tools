@@ -4,11 +4,16 @@ from routes import routes
 from urllib3 import disable_warnings
 
 
+#
+# Quando acordar, terminar o Rank Changer
+#
 
 disable_warnings()
 
 print('Waiting league client...')
+
 api = api.LeagueOfLegendsClientAPI()
+
 def Avaibility():
     os.system('cls')
     print('===================')
@@ -28,7 +33,7 @@ def Avaibility():
         else:
             print('[IRF-TOOL] A error ocurred.')
             os.system('pause')
-            exit()
+            os.system('exit')
     elif choice == 2:
         req = api.put(routes.avaibilityroute, {"availability": "away"})
         os.system('cls')
@@ -39,7 +44,7 @@ def Avaibility():
         else:
             print('[IRF-TOOL] A error ocurred.')
             os.system('pause')
-            exit()
+            os.system('exit')
     elif choice == 3:
         req = api.put(routes.avaibilityroute, {"availability": "mobile"})
         os.system('cls')
@@ -50,7 +55,7 @@ def Avaibility():
         else:
             print('[IRF-TOOL] A error ocurred.')
             os.system('pause')
-            exit()
+            os.system('exit')
     elif choice == 4:
         req = api.put(routes.avaibilityroute, {"availability": "offline"})
         os.system('cls')
@@ -61,29 +66,520 @@ def Avaibility():
         else:
             print('[IRF-TOOL] A error ocurred.')
             os.system('pause')
-            exit()
+            os.system('exit')
 
 def Status(): # Status Changer (bypass characters limit)
     pass
+
+# def Instalock():
+#     data = api.patch('/lol-champ-select/v1/session/actions/1', {"championId": "1","completed": True})
+#     if data.status_code == 204:
+#         Main()
+#     else:
+#         Main()
 def IconChanger(): # Icon Changer (chinese icons)
-
-    pass
-
-def IconClient(): # Icon Changer (client-only)
+    os.system('cls')
     iconID = int(input('[IRF-TOOL] ICON ID: '))
-
+    data = api.put(routes.iconchanger, {"profileIconId": iconID})
+    if data.status_code == 201:
+        print('[IRF-TOOL] Icon altered to: {}.'.format(iconID))
+        os.system('pause')
+        Main()
+    else:
+        print('[IRF-TOOL] An error ocurred.')
+def IconClient(): # Icon Changer (client-only)
+    os.system('cls')
+    iconID = int(input('[IRF-TOOL] ICON ID: '))
     data = api.put(routes.statusroute, {"icon": iconID})
-    print(data.json())
-    pass
+    if data.status_code == 201:
+        print('[IRF-TOOL] Icon altered to: {}.'.format(iconID))
+        os.system('pause')
+        Main()
+    else:
+        print('[IRF-TOOL] An error ocurred.')
+
+def RankChanger():
+    os.system('cls')
+    print('[IRF-TOOL] CHOOSE THE QUEUE  ')
+    print('=============================')
+    print('[1] SOLO/DUO (5X5)           ')
+    print('[2] FLEX (5X5)               ')
+    print('[3] TWISTED TREE LINE (3X3)  ')
+    print('[4] TFT                      ')
+    print('[5] Back to menu             ')
+    print('=============================')
+    print()
+    choiceQueue = int(input('[IRF-TOOL]: '))
+    if choiceQueue == 1:
+        os.system('cls')
+        print('     [IRF-TOOL] SOLO/DUO     ')
+        print('=============================')
+        print('[1] Challenger               ')
+        print('[2] Grandmaster              ')
+        print('[3] Master                   ')
+        print('[4] Diamond                  ')
+        print('[5] Platinum                 ')
+        print('[6] Gold                     ')
+        print('[7] Silver                   ')
+        print('[8] Bronze                   ')
+        print('[9] Iron                     ')
+        print('[10] Back to queue selector  ')
+        print('=============================')
+        print()
+        choiceElo = int(input('[IRF-TOOL]: '))
+        if choiceElo == 1:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Challenger')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 2:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Grandmaster')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()            
+        elif choiceElo == 3:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Master')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 4:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Diamond {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 5:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Platinum {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 6:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Gold {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 7:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Silver {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 8:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Bronze {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 9:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Iron {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 10:
+            RankChanger()
+    elif choiceQueue == 2:
+        os.system('cls')
+        print('=============================')
+        print('[1] Challenger               ')
+        print('[2] Grandmaster              ')
+        print('[3] Master                   ')
+        print('[4] Diamond                  ')
+        print('[5] Platinum                 ')
+        print('[6] Gold                     ')
+        print('[7] Silver                   ')
+        print('[8] Bronze                   ')
+        print('[9] Iron                     ')
+        print('[10] Back to queue selector  ')
+        print('=============================')
+        print()
+        choiceElo = int(input('[IRF-TOOL]: '))
+        if choiceElo == 1:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Challenger')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 2:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Grandmaster')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()            
+        elif choiceElo == 3:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Master')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 4:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Diamond {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 5:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Platinum {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 6:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Gold {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 7:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Silver {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 8:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Bronze {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 9:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Iron {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 10:
+            RankChanger()
+    elif choiceQueue == 3:
+        os.system('cls')
+        print('=============================')
+        print('[1] Challenger               ')
+        print('[2] Grandmaster              ')
+        print('[3] Master                   ')
+        print('[4] Diamond                  ')
+        print('[5] Platinum                 ')
+        print('[6] Gold                     ')
+        print('[7] Silver                   ')
+        print('[8] Bronze                   ')
+        print('[9] Iron                     ')
+        print('[10] Back to queue selector  ')
+        print('=============================')
+        print()
+        choiceElo = int(input('[IRF-TOOL]: '))
+        if choiceElo == 1:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Challenger')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 2:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Grandmaster')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()            
+        elif choiceElo == 3:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Master')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 4:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Diamond {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 5:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Platinum {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 6:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Gold {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 7:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Silver {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 8:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Bronze {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 9:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Iron {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 10:
+            RankChanger()
+    elif choiceQueue == 4:
+        os.system('cls')
+        print('=============================')
+        print('[1] Challenger               ')
+        print('[2] Grandmaster              ')
+        print('[3] Master                   ')
+        print('[4] Diamond                  ')
+        print('[5] Platinum                 ')
+        print('[6] Gold                     ')
+        print('[7] Silver                   ')
+        print('[8] Bronze                   ')
+        print('[9] Iron                     ')
+        print('[10] Back to queue selector  ')
+        print('=============================')
+        print()
+        choiceElo = int(input('[IRF-TOOL]: '))
+        if choiceElo == 1:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Challenger')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 2:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Grandmaster')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()            
+        elif choiceElo == 3:
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Master')
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 4:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Diamond {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 5:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Platinum {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 6:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Gold {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 7:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Silver {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 8:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Bronze {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 9:
+            division = str(input("[IRF-TOOL] Division: "))
+            data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
+            if data.status_code == 201:
+                print('[IRF-TOOL] Rank changed to Iron {}'.format(division))
+                os.system('pause')
+                Main()
+            else:
+                print('[IRF-TOOL] An error ocurred.')
+                os.system('pause')
+                Main()
+        elif choiceElo == 10:
+            RankChanger()
+    else:
+        RankChanger()
+
+
 
 def BackgroundChanger(): # Change Profile Background
     pass
 
 def Main():
     try:
-        currentSummoner = api.get(routes.currentsummoner)
+        currentSummoner = api.get(routes.currentsummoner).json()
         nick = currentSummoner["displayName"]
-        os.system('cls && title IRF-TOOL - ({})'.format(nick))
+        os.system('cls && title IRF-TOOL - ({}) && color b'.format(nick))
         print('[IRF-TOOL] Choose a feature.')
         print()
         print('============IRF-TOOL============')
@@ -108,18 +604,25 @@ def Main():
         elif choice == 5:
             BackgroundChanger()
         elif choice == 6:
-            pass
+            os.system('cls')
+            print('============IRF-TOOL============')
+            print('[1] Rank Changer                ')
+            # print('[2] Instalock                   ')
+            print('================================')
+            choice2 = int(input('[IRF-TOOL]: '))
+            if choice2 == 1:
+                RankChanger()
+            # elif choice2 == 2:
+            #     Instalock()
         elif choice == 7:
-            exit()
+            os.system('exit')
         else:
             Main()
     except KeyboardInterrupt:
-        exit()
+        os.system('exit')
     except:
         print('[IRF-TOOL] An error ocurred.')
         Main()
         
-
-
 if __name__ in "__main__":
     Main()
