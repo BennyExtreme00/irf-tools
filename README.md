@@ -1,3 +1,3 @@
-# IRF TOOL: A python League Tool
+# IRF TOOL: A Python League Tool
 
 
