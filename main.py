@@ -1,6 +1,5 @@
 import os
 from routes import api
-from routes import routes
 from urllib3 import disable_warnings
 
 
@@ -20,7 +19,7 @@ def Avaibility():
     print('===================')
     choice = int(input('[IRF-TOOL]: '))
     if choice == 1:
-        req = api.put(routes.avaibilityroute, {"availability": "online"})
+        req = api.put('/lol-chat/v1/me', {"availability": "online"})
         os.system('cls')
         if req.status_code == 201:
             print('[IRF-TOOL] Avaibility Changed.')
@@ -31,7 +30,7 @@ def Avaibility():
             os.system('pause')
             os.system('exit')
     elif choice == 2:
-        req = api.put(routes.avaibilityroute, {"availability": "away"})
+        req = api.put('/lol-chat/v1/me', {"availability": "away"})
         os.system('cls')
         if req.status_code == 201:
             print('[IRF-TOOL] Avaibility Changed.')
@@ -42,7 +41,7 @@ def Avaibility():
             os.system('pause')
             os.system('exit')
     elif choice == 3:
-        req = api.put(routes.avaibilityroute, {"availability": "mobile"})
+        req = api.put('/lol-chat/v1/me', {"availability": "mobile"})
         os.system('cls')
         if req.status_code == 201:
             print('[IRF-TOOL] Avaibility Changed.')
@@ -53,7 +52,7 @@ def Avaibility():
             os.system('pause')
             os.system('exit')
     elif choice == 4:
-        req = api.put(routes.avaibilityroute, {"availability": "offline"})
+        req = api.put('/lol-chat/v1/me', {"availability": "offline"})
         os.system('cls')
         if req.status_code == 201:
             print('[IRF-TOOL] Avaibility Changed.')
@@ -80,7 +79,7 @@ def IconChanger(): # Icon Changer (chinese icons)
     print('[IRF TOOL] All icons: https://gonext.today/blog/explorer/icon')
     print()
     iconID = int(input('[IRF-TOOL] ICON ID: '))
-    data = api.put(routes.iconchanger, {"profileIconId": iconID})
+    data = api.put('/lol-summoner/v1/current-summoner/icon', {"profileIconId": iconID})
     if data.status_code == 201:
         print('[IRF-TOOL] Icon altered to: {}.'.format(iconID))
         os.system('pause')
@@ -92,7 +91,7 @@ def IconClient(): # Icon Changer (client-only)
     print('[IRF TOOL] All icons: https://gonext.today/blog/explorer/icon')
     print()
     iconID = int(input('[IRF-TOOL] ICON ID: '))
-    data = api.put(routes.statusroute, {"icon": iconID})
+    data = api.put('/lol-chat/v1/me', {"icon": iconID})
     if data.status_code == 201:
         print('[IRF-TOOL] Icon altered to: {}.'.format(iconID))
         os.system('pause')
@@ -594,7 +593,7 @@ def BackgroundChanger(): # Change Profile Background
 
 def Main():
     try:
-        currentSummoner = api.get(routes.currentsummoner).json()
+        currentSummoner = api.get('/lol-summoner/v1/current-summoner').json()
         nick = currentSummoner["displayName"]
         os.system('cls && title IRF-TOOL - ({}) && color b'.format(nick))
         print('[IRF-TOOL] Choose a feature.')
