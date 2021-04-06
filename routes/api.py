@@ -1,3 +1,5 @@
+#Credits to github.com/nycholassousa/
+
 import base64
 import psutil
 import os
