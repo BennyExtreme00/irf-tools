@@ -79,6 +79,8 @@ def Status(): # Status Changer (bypass characters limit)
     data = api.put('/lol-chat/v1/me', {"statusMessage": msg})
     if data.status_code == 201:
         print('[IRF TOOL] Status changed.')
+        os.system('pause')
+        Main()
     else:
         print('[IRF TOOL] An error ocurred.')
         os.system('pause')
