@@ -68,6 +68,7 @@ def Avaibility():
         Avaibility()
 
 def Status(): # Status Changer (bypass characters limit)
+    os.system('cls')
     os.system('echo Paste status here, and save it (ctrl+s) > status.txt')
     f = open('status.txt', 'r')
     os.startfile('status.txt')
@@ -619,6 +620,17 @@ def RankChanger():
 
 
 def BackgroundChanger(): # Change Profile Background
+    print('[IRF TOOL] Background list: ')
+    print()
+    bgid = str(input('[IRF TOOL] Background ID: '))
+    data = api.post('/lol-summoner/v1/current-summoner/summoner-profile/', {"key":"backgroundSkinId","value": bgid})
+    if data.status_code == 200:
+        print()
+        print('[IRF TOOL] Background altered.')
+    else:
+        print('[IRF TOOL] An error ocurred.')
+        os.system('pause')
+        Main()
     pass
 
 def Main():
