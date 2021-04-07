@@ -115,7 +115,7 @@ def IconChanger(): # Icon Changer (chinese icons)
         Main()
     else:
         print('[IRF TOOL] An error ocurred.')
-        Main()
+        Main()  
 def IconClient(): # Icon Changer (client-only)
     os.system('cls')
     print('[IRF TOOL] All icons: https://gonext.today/blog/explorer/icon')
@@ -627,6 +627,7 @@ def BackgroundChanger(): # Change Profile Background
     if data.status_code == 200:
         print()
         print('[IRF TOOL] Background altered.')
+        Main()
     else:
         print('[IRF TOOL] An error ocurred.')
         os.system('pause')
