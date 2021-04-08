@@ -185,6 +185,7 @@ def RankChanger():
         if choiceElo == 1:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5", "regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Challenger')
                 system('pause')
                 Main()
@@ -195,6 +196,7 @@ def RankChanger():
         elif choiceElo == 2:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Grandmaster')
                 system('pause')
                 Main()
@@ -205,6 +207,7 @@ def RankChanger():
         elif choiceElo == 3:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Master')
                 system('pause')
                 Main()
@@ -216,6 +219,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Diamond {}'.format(division))
                 system('pause')
                 Main()
@@ -227,6 +231,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Platinum {}'.format(division))
                 system('pause')
                 Main()
@@ -238,6 +243,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Gold {}'.format(division))
                 system('pause')
                 Main()
@@ -249,6 +255,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Silver {}'.format(division))
                 system('pause')
                 Main()
@@ -260,6 +267,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Bronze {}'.format(division))
                 system('pause')
                 Main()
@@ -271,6 +279,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_SOLO_5X5","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Iron {}'.format(division))
                 system('pause')
                 Main()
@@ -303,6 +312,7 @@ def RankChanger():
         if choiceElo == 1:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Challenger')
                 system('pause')
                 Main()
@@ -313,6 +323,7 @@ def RankChanger():
         elif choiceElo == 2:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Grandmaster')
                 system('pause')
                 Main()
@@ -323,6 +334,7 @@ def RankChanger():
         elif choiceElo == 3:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Master')
                 system('pause')
                 Main()
@@ -334,6 +346,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Diamond {}'.format(division))
                 system('pause')
                 Main()
@@ -345,6 +358,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Platinum {}'.format(division))
                 system('pause')
                 Main()
@@ -356,6 +370,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Gold {}'.format(division))
                 system('pause')
                 Main()
@@ -367,6 +382,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Silver {}'.format(division))
                 system('pause')
                 Main()
@@ -378,6 +394,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Bronze {}'.format(division))
                 system('pause')
                 Main()
@@ -389,6 +406,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_SR","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Iron {}'.format(division))
                 system('pause')
                 Main()
@@ -421,6 +439,7 @@ def RankChanger():
         if choiceElo == 1:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Challenger')
                 system('pause')
                 Main()
@@ -431,6 +450,7 @@ def RankChanger():
         elif choiceElo == 2:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Grandmaster')
                 system('pause')
                 Main()
@@ -441,6 +461,7 @@ def RankChanger():
         elif choiceElo == 3:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Master')
                 system('pause')
                 Main()
@@ -452,6 +473,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Diamond {}'.format(division))
                 system('pause')
                 Main()
@@ -463,6 +485,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Platinum {}'.format(division))
                 system('pause')
                 Main()
@@ -474,6 +497,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Gold {}'.format(division))
                 system('pause')
                 Main()
@@ -485,6 +509,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Silver {}'.format(division))
                 system('pause')
                 Main()
@@ -496,6 +521,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Bronze {}'.format(division))
                 system('pause')
                 Main()
@@ -507,6 +533,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_FLEX_TT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Iron {}'.format(division))
                 system('pause')
                 Main()
@@ -539,6 +566,7 @@ def RankChanger():
         if choiceElo == 1:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "CHALLENGER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Challenger')
                 system('pause')
                 Main()
@@ -549,6 +577,7 @@ def RankChanger():
         elif choiceElo == 2:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GRANDMASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Grandmaster')
                 system('pause')
                 Main()
@@ -559,6 +588,7 @@ def RankChanger():
         elif choiceElo == 3:
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "MASTER","rankedLeagueDivision": "I"}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Master')
                 system('pause')
                 Main()
@@ -570,6 +600,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "DIAMOND","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Diamond {}'.format(division))
                 system('pause')
                 Main()
@@ -581,6 +612,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "PLATINUM","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Platinum {}'.format(division))
                 system('pause')
                 Main()
@@ -592,6 +624,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "GOLD","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Gold {}'.format(division))
                 system('pause')
                 Main()
@@ -603,6 +636,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "SILVER","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Silver {}'.format(division))
                 system('pause')
                 Main()
@@ -614,6 +648,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "BRONZE","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Bronze {}'.format(division))
                 system('pause')
                 Main()
@@ -625,6 +660,7 @@ def RankChanger():
             division = str(input("[IRF TOOL] Division: "))
             data = api.put('/lol-chat/v1/me', {"lol":{"rankedLeagueQueue":"RANKED_TFT","regalia":"{\"bannerType\":1,\"crestType\":2}","rankedSplitRewardLevel":"3","rankedLeagueTier": "IRON","rankedLeagueDivision": division}})
             if data.status_code == 201:
+                system('cls')
                 print('[IRF TOOL] Rank changed to Iron {}'.format(division))
                 system('pause')
                 Main()
@@ -641,13 +677,14 @@ def RankChanger():
 
 
 def BackgroundChanger(): # Change Profile Background
+    system('cls')
     print('[IRF TOOL] Background list: ')
     print()
     bgid = str(input('[IRF TOOL] Background ID: '))
     data = api.post('/lol-summoner/v1/current-summoner/summoner-profile/', {"key":"backgroundSkinId","value": bgid})
     if data.status_code == 200:
         print()
-        print('[IRF TOOL] Background altered.')
+        print('[IRF TOOL] Background has been changed.')
         Main()
     else:
         print('[IRF TOOL] An error ocurred.')
