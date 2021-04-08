@@ -13,6 +13,7 @@ print('Waiting league client...')
 api = api.LeagueOfLegendsClientAPI()
 
 def DeleteFriends():
+    system('cls')
     data = api.get('/lol-chat/v1/friends').json()
     countfriends = len(data)
     confirmbox = confirm(text='Are you sure? this will delete ' + str(countfriends) + ' friends.', title='IRF Tool', buttons=['Yes', 'Cancel'])
@@ -32,7 +33,7 @@ def DeleteFriends():
 
 
 def Avaibility(): # Change avaibility 
-    system('cls')
+    system('cls'    )
     print('===================')
     print('[1] Online          ')
     print('[2] Away            ')
