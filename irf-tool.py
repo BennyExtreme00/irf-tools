@@ -12,6 +12,27 @@ print('Waiting league client...')
 
 api = api.LeagueOfLegendsClientAPI()
 
+
+def CopyFriends():
+    system('cls')
+    data = api.get('/lol-chat/v1/friends').json()
+    countfriends = len(data)
+    for i in range(countfriends):
+        print('Nick: '+ data[i]["name"] + ' ID: '+ data[i]["id"])
+
+    print()
+    choice = str(input('[IRF TOOL] Insert the Friend ID: '))
+
+    friend = api.get('/lol-chat/v1/friends/{}'.format(choice)).json()
+    if friend.status_code == 404:
+        print('[IRF TOOL] Friend not found (copy the right id.)')
+    else:
+        request = api.put('/lol-chat/v1/me', {"icon": friend["icon"], "statusMessage": friend["statusMessage"]})
+        system('cls')
+        print('[IRF TOOL] {} has been copied.'.format(friend["name"]))
+        system('pause')
+        Main()
+
 def DeleteFriends():
     system('cls')
     data = api.get('/lol-chat/v1/friends').json()
@@ -725,13 +746,11 @@ def Main():
             print('============IRF TOOL============')
             print('[1] Rank Changer                ')
             print('[2] Practice Tool (more bots)   ')
-            # print('[3] Instalock                   ')
-            # print('[4] AutoBan                     ')
             print('[3] Remove all friends          ')
-            print('[4] Previous Page')
-            print('[5] Next Page')
-            print('[6] Exit')
-            # print('[2] Instalock                   ')
+            print('[4] Copy Friend                 ')
+            print('[5] Previous Page               ')
+            print('[6] Next Page                   ')
+            print('[7] Exit')
             print('================================')
             choice2 = int(input('[IRF TOOL]: '))
             if choice2 == 1:
@@ -741,13 +760,15 @@ def Main():
             elif choice2 == 3:
                 DeleteFriends()
             elif choice2 == 4:
-                Main()
+                CopyFriends()
             elif choice2 == 5:
+                Main()
+            elif choice2 == 6:
                 system('cls')
                 print('[IRF TOOL] Coming soon...')
                 system('pause')
                 Main()
-            elif choice2 == 6:
+            elif choice2 == 7:
                 system('exit')
             # elif choice2 == 2:
             #     Instalock()
