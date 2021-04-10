@@ -5,7 +5,7 @@
 - Background Changer
 - Rank Changer (soloq, flex, 3x3, tft)
 - Status Changer (bypass character limit)
-- Icon Changer (chibi icons)
+- Icon Changer (29 - 78)
 - Icon Changer (client-only)
 - Change Avaibility (appears offline when you are online)
 - Practice Tool+ (more bots in practice tool)
