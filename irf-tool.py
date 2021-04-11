@@ -1,16 +1,42 @@
 from keyboard import wait
+from keyboard import is_pressed
 from routes import api
 from routes import routes
 from urllib3 import disable_warnings
 from pyautogui import confirm
 from os import system
 from os import startfile
-
+from os import chdir
 disable_warnings()
 
 print('Waiting league client...')
 
 api = api.LeagueOfLegendsClientAPI()
+
+def MultipleClients():
+    system('cls')
+    print('===================================================')
+    print('[1] Default Path (C:/Riot Games/League of Legends/')
+    print('[2] Custom Path                                   ')
+    print('===================================================')
+    print()
+    path = int(input('[IRF TOOL]: '))
+
+    if path == 1:
+        system('cls')
+        print('Path: C:/Riot Games/League of Legends')
+        chdir('C:/Riot Games/League of Legends/')
+        system('start LeagueClient.exe --allow-multiple-clients')
+    if path == 2:
+        system('cls')
+        custompath = str(input('Insert custom League Folder Path (ex: D:/Riot Games/League of Legends): '))
+        print('Path: {}'.format(path))
+        chdir(custompath)
+        system('start LeagueClient.exe --allow-multiple-clients')
+
+def ChampSelectSystem():
+    pass
+        
 
 
 def CopyFriends():
@@ -24,11 +50,11 @@ def CopyFriends():
     choice = str(input('[IRF TOOL] Insert the Friend ID: '))
 
     friend = api.get('/lol-chat/v1/friends/{}'.format(choice)).json()
+    print(friend)
     if friend.status_code == 404:
         print('[IRF TOOL] Friend not found (copy the right id.)')
     else:
         request = api.put('/lol-chat/v1/me', {"icon": friend["icon"], "statusMessage": friend["statusMessage"]})
-        system('cls')
         print('[IRF TOOL] {} has been copied.'.format(friend["name"]))
         system('pause')
         Main()
@@ -748,9 +774,10 @@ def Main():
             print('[2] Practice Tool (more bots)   ')
             print('[3] Remove all friends          ')
             print('[4] Copy Friend                 ')
-            print('[5] Previous Page               ')
-            print('[6] Next Page                   ')
-            print('[7] Exit')
+            print('[5] Multiple Clients')
+            print('[6] Previous Page               ')
+            print('[7] Next Page                   ')
+            print('[8] Exit')
             print('================================')
             choice2 = int(input('[IRF TOOL]: '))
             if choice2 == 1:
@@ -762,13 +789,15 @@ def Main():
             elif choice2 == 4:
                 CopyFriends()
             elif choice2 == 5:
-                Main()
+                MultipleClients()
             elif choice2 == 6:
+                Main()
+            elif choice2 == 7:
                 system('cls')
                 print('[IRF TOOL] Coming soon...')
                 system('pause')
                 Main()
-            elif choice2 == 7:
+            elif choice2 == 8:
                 system('exit')
             # elif choice2 == 2:
             #     Instalock()
