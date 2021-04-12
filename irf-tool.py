@@ -1,7 +1,6 @@
 from keyboard import wait
 from keyboard import is_pressed
 from routes import api
-from routes import routes
 from urllib3 import disable_warnings
 from pyautogui import confirm
 from os import system
@@ -37,8 +36,6 @@ def MultipleClients():
 def ChampSelectSystem():
     pass
         
-
-
 def CopyFriends():
     system('cls')
     data = api.get('/lol-chat/v1/friends').json()
