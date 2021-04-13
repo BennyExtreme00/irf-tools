@@ -11,6 +11,7 @@ from requests import status_codes
 disable_warnings()
 
 print('Waiting league client...')
+
 api = api.LeagueOfLegendsClientAPI()
 
 def MultipleClients():
@@ -97,12 +98,13 @@ def DeleteFriends():
 
 def Avaibility(): # Change avaibility 
     system('cls'    )
-    print('===================')
-    print('[1] Online          ')
-    print('[2] Away            ')
-    print('[3] Mobile          ')
-    print('[4] Offline         ')
-    print('===================')
+    print('=====================')
+    print('[1] Online           ')
+    print('[2] Away             ')
+    print('[3] Mobile           ')
+    print('[4] Offline          ')
+    print('[5] Return to menu   ')
+    print('=====================')
     choice = int(input('[IRF TOOL]: '))
     if choice == 1:
         req = api.put('/lol-chat/v1/me', {"availability": "online"})
@@ -148,6 +150,8 @@ def Avaibility(): # Change avaibility
             print('[IRF TOOL] An error ocurred.')
             system('pause')
             system('exit')
+    elif choice == 5:
+        Main()
     else:
         Avaibility()
 
@@ -161,6 +165,9 @@ def Status(): # Status Changer (bypass characters limit)
     lines = f.readlines()
     text = '\t'.join([line.strip() for line in lines])
     msg = text.encode("windows-1252").decode("utf-8")
+    if msg == 'Paste status here, and save it (ctrl+s)':
+        print('[IRF TOOL] Status changed to watermark.')
+        msg = 'https://github.com/flowd1337/irf-tool/'
     data = api.put('/lol-chat/v1/me', {"statusMessage": msg})
     if data.status_code == 201:
         print('[IRF TOOL] Status changed.')
