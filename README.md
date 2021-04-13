@@ -9,7 +9,7 @@
 - Icon Changer (client-only)
 - Change Avaibility (appears offline when you are online)
 - Practice Tool+ (more bots in practice tool)
-- Delete All Friends 
+- Friend Deleter (delete all friends)
 - Copy Friend (copy icon and status message of any friend)
 - MultiClients (permits you open multiple clients)
 
