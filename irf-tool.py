@@ -11,7 +11,6 @@ from requests import status_codes
 disable_warnings()
 
 print('Waiting league client...')
-
 api = api.LeagueOfLegendsClientAPI()
 
 def MultipleClients():
