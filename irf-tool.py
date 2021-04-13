@@ -51,7 +51,7 @@ def CopyFriends():
     if friend.status_code == 404:
         print('[IRF TOOL] Friend not found (copy the right id.)')
     else:
-        request = api.put('/lol-chat/v1/me', {"icon": friend["icon"], "statusMessage": friend["statusMessage"]})
+        api.put('/lol-chat/v1/me', {"icon": friend["icon"], "statusMessage": friend["statusMessage"]})
         print('[IRF TOOL] {} has been copied.'.format(friend["name"]))
         system('pause')
         Main()
@@ -738,9 +738,9 @@ def BackgroundChanger(): # Change Profile Background
 
 def Main():
     try:
-        currentSummoner = api.get('/lol-summoner/v1/current-summoner').json()
-        nick = currentSummoner["displayName"]
-        system('cls && title IRF TOOL - ({}) && color b'.format(nick))
+        #currentSummoner = api.get('/lol-summoner/v1/current-summoner').json()
+        #nick = currentSummoner["displayName"]
+        system('cls && title IRF TOOL && color b')
         print('[IRF TOOL] Choose a feature.')
         print()
         print('============IRF TOOL============')
