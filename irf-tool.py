@@ -98,12 +98,13 @@ def DeleteFriends():
 
 def Avaibility(): # Change avaibility 
     system('cls'    )
-    print('===================')
-    print('[1] Online          ')
-    print('[2] Away            ')
-    print('[3] Mobile          ')
-    print('[4] Offline         ')
-    print('===================')
+    print('=====================')
+    print('[1] Online           ')
+    print('[2] Away             ')
+    print('[3] Mobile           ')
+    print('[4] Offline          ')
+    print('[5] Return to menu   ')
+    print('=====================')
     choice = int(input('[IRF TOOL]: '))
     if choice == 1:
         req = api.put('/lol-chat/v1/me', {"availability": "online"})
@@ -149,6 +150,8 @@ def Avaibility(): # Change avaibility
             print('[IRF TOOL] An error ocurred.')
             system('pause')
             system('exit')
+    elif choice == 5:
+        Main()
     else:
         Avaibility()
 
