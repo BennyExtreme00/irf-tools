@@ -1,5 +1,5 @@
 # IRF TOOL: A Python League Tool 🐍
-## [Click Here](https://cdn.flowd1337.repl.co/download/IRF-Tool_1.1.zip) to Download Latest Version
+## [Click Here](https://cdn.flowd1337.repl.co/download/IRF-Tool.exe) to Download Latest Version
 
 ## [Click Here](https://github.com/flowd1337/irf-tool/releases/) to see All Releases
 
