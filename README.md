@@ -1,5 +1,5 @@
 # IRF TOOL: A Python League Tool 🐍
-## [Click Here](https://cdn.flowd1337.repl.co/download/irf-tool.zip) to Download
+## [Click Here](https://cdn.flowd1337.repl.co/download/IRF-Tool_1.1.zip) to Download
 
 # Features 🎈
 - Background Changer
