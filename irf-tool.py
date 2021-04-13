@@ -17,7 +17,7 @@ api = api.LeagueOfLegendsClientAPI()
 def MultipleClients():
     system('cls')
     print('===================================================')
-    print('[1] Default Path (C:/Riot Games/League of Legends/')
+    print('[1] Default Path (C:/Riot Games/League of Legends/)')
     print('[2] Custom Path                                   ')
     print('[3] Return to menu')
     print('===================================================')
@@ -26,17 +26,25 @@ def MultipleClients():
 
     if path == 1:
         system('cls')
-        print('Path: C:/Riot Games/League of Legends')
+        print('[IRF TOOL] Opening a new Client')
         chdir('C:/Riot Games/League of Legends/')
         system('start LeagueClient.exe --allow-multiple-clients')
+        print()
+        system('pause')
+        MultipleClients()
     elif path == 2:
         system('cls')
         custompath = str(input('Insert custom League Folder Path (ex: D:/Riot Games/League of Legends): '))
-        print('Path: {}'.format(path))
+        print('[IRF TOOL] Opening a new Client')
         chdir(custompath)
         system('start LeagueClient.exe --allow-multiple-clients')
+        print()
+        system('pause')
+        MultipleClients()
     elif path == 3:
         Main()
+    else:
+        MultipleClients()
 def ChampSelectSystem():
     pass
         
