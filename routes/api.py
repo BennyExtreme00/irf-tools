@@ -38,7 +38,7 @@ class LeagueOfLegendsClientAPI(object):
             self.protocol + "://127.0.0.1:" + self.port + path,
             verify=False,
             headers={"Authorization": "Basic " + self.password}
-        ).json()
+        )
 
     def post(self, path, json=None):
         return requests.post(

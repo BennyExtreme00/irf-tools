@@ -1,4 +1,5 @@
 from keyboard import wait
+from time import sleep
 from keyboard import is_pressed
 from routes import api
 from urllib3 import disable_warnings
@@ -6,6 +7,7 @@ from pyautogui import confirm
 from os import system
 from os import startfile
 from os import chdir
+from requests import status_codes
 disable_warnings()
 
 print('Waiting league client...')
@@ -17,6 +19,7 @@ def MultipleClients():
     print('===================================================')
     print('[1] Default Path (C:/Riot Games/League of Legends/')
     print('[2] Custom Path                                   ')
+    print('[3] Return to menu')
     print('===================================================')
     print()
     path = int(input('[IRF TOOL]: '))
@@ -26,13 +29,14 @@ def MultipleClients():
         print('Path: C:/Riot Games/League of Legends')
         chdir('C:/Riot Games/League of Legends/')
         system('start LeagueClient.exe --allow-multiple-clients')
-    if path == 2:
+    elif path == 2:
         system('cls')
         custompath = str(input('Insert custom League Folder Path (ex: D:/Riot Games/League of Legends): '))
         print('Path: {}'.format(path))
         chdir(custompath)
         system('start LeagueClient.exe --allow-multiple-clients')
-
+    elif path == 3:
+        Main()
 def ChampSelectSystem():
     pass
         
@@ -40,19 +44,33 @@ def CopyFriends():
     system('cls')
     data = api.get('/lol-chat/v1/friends').json()
     countfriends = len(data)
-    for i in range(countfriends):
-        print('Nick: '+ data[i]["name"] + ' ID: '+ data[i]["id"])
-
+    # for i in range(countfriends):
+    #     globals()[data[i]["name"]] = str(data[i]["id"])        
+    # print()
     print()
-    choice = str(input('[IRF TOOL] Insert the Friend ID: '))
+    choice = input('[IRF TOOL] Insert the friend nickname: ')
+    
+    if choice == '':
+        print('[IRF TOOL] Friend not found.')
+        print()
+        system('pause')
+        Main()
 
-    friend = api.get('/lol-chat/v1/friends/{}'.format(choice)).json()
-    print(friend)
-    if friend.status_code == 404:
-        print('[IRF TOOL] Friend not found (copy the right id.)')
-    else:
+    for i in range(countfriends):
+        if data[i]["name"].lower() == choice.lower():
+            choice = data[i]["id"]
+            break
+
+    friend = api.get('/lol-chat/v1/friends/{}'.format(choice))
+    if friend.status_code == 200:
+        friend = friend.json()
         api.put('/lol-chat/v1/me', {"icon": friend["icon"], "statusMessage": friend["statusMessage"]})
         print('[IRF TOOL] {} has been copied.'.format(friend["name"]))
+        system('pause')
+        Main()
+    else:
+        print('[IRF TOOL] Friend not found.')
+        print()
         system('pause')
         Main()
 
@@ -70,6 +88,8 @@ def DeleteFriends():
             for i in range(countfriends):
                 api.delete('/lol-chat/v1/friends/' + data[i]["puuid"])
             print('[IRF TOOL] All friends have been removed.')
+            system('pause')
+            Main()
     else:
         print('[IRF TOOL] Delete all friends cancelled.')
         system('pause')
@@ -93,7 +113,7 @@ def Avaibility(): # Change avaibility
             system('pause')
             Main()
         else:
-            print('[IRF TOOL] A error ocurred.')
+            print('[IRF TOOL] An error ocurred.')
             system('pause')
             system('exit')
     elif choice == 2:
@@ -104,7 +124,7 @@ def Avaibility(): # Change avaibility
             system('pause')
             Main()
         else:
-            print('[IRF TOOL] A error ocurred.')
+            print('[IRF TOOL] An error ocurred.')
             system('pause')
             system('exit')
     elif choice == 3:
@@ -115,7 +135,7 @@ def Avaibility(): # Change avaibility
             system('pause')
             Main()
         else:
-            print('[IRF TOOL] A error ocurred.')
+            print('[IRF TOOL] An error ocurred.')
             system('pause')
             system('exit')
     elif choice == 4:
@@ -126,7 +146,7 @@ def Avaibility(): # Change avaibility
             system('pause')
             Main()
         else:
-            print('[IRF TOOL] A error ocurred.')
+            print('[IRF TOOL] An error ocurred.')
             system('pause')
             system('exit')
     else:
@@ -803,10 +823,14 @@ def Main():
         else:
             Main()
     except KeyboardInterrupt:
+        print()
         system('exit')
     except:
+        print()
         print('[IRF TOOL] An error ocurred.')
+        sleep(0.9)
         Main()
+
         
 if __name__ in "__main__":
     Main()
