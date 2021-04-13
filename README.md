@@ -1,6 +1,8 @@
 # IRF TOOL: A Python League Tool 🐍
 ## [Click Here](https://cdn.flowd1337.repl.co/download/IRF-Tool_1.1.zip) to Download Latest Version
 
+## [Old Versions](https://github.com/flowd1337/irf-tool/releases/)
+
 # Features 🎈
 - Background Changer
 - Rank Changer (soloq, flex, 3x3, tft)
