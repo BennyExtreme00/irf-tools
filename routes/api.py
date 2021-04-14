@@ -21,6 +21,7 @@ def get_process_by_name(process_name):
 
 class LeagueOfLegendsClientAPI(object):
     def __init__(self):
+        print('Waiting league client...')
         self.process = get_process_by_name("LeagueClientUx")
 
         self.lockfile = open(os.path.join(self.process.cwd(), "lockfile"), 'r').read()
