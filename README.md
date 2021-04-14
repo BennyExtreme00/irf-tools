@@ -3,6 +3,9 @@
 
 ## [Click Here](https://github.com/flowd1337/irf-tool/releases/) to see All Releases
 
+![alt text][logo]
+[logo]: https://media.tenor.co/videos/623f0cdb8bba763556e9f54625c5e394/mp4 "Installation"
+
 # Features 🎈
 - Background Changer
 - Rank Changer (soloq, flex, 3x3, tft)
