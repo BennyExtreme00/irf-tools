@@ -3,7 +3,7 @@
 
 ## [Click Here](https://github.com/flowd1337/irf-tool/releases/) to see All Releases
 
-# Installing
+# Installation
 ![alt text](https://cdn.flowd1337.repl.co/images/installation_1.gif "Installation")
 
 # Features 🎈
