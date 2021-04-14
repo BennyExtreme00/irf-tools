@@ -3,8 +3,8 @@
 
 ## [Click Here](https://github.com/flowd1337/irf-tool/releases/) to see All Releases
 
-# Installation
-![alt text](https://cdn.flowd1337.repl.co/images/installation_1.gif "Installation")
+# Demonstration
+![alt text](https://cdn.flowd1337.repl.co/images/demonstration.gif "Demonstration")
 
 # Features 🎈
 - Background Changer
