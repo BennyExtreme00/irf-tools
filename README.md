@@ -2,7 +2,7 @@
 ## [Click Here](https://cdn.flowd1337.repl.co/download/IRF-Tool.exe) to Download Latest Version
 
 ## [Click Here](https://github.com/flowd1337/irf-tool/releases/) to see All Releases
-## Buy [Premium Version](https://discord.gg/PuKSu878Aj) (Discord)
+## [Buy Premium Version](https://discord.gg/PuKSu878Aj) (Discord)
 # Demonstration
 ![alt text](https://cdn.flowd1337.repl.co/images/demonstration.gif "Demonstration")
 
