@@ -7,44 +7,30 @@ from pyautogui import confirm
 from os import system
 from os import startfile
 from os import chdir
+from keyboard import on_press_key
 from requests import status_codes
 disable_warnings()
 
 api = api.LeagueOfLegendsClientAPI()
 
+def OpenClient(x):
+    for clients in range(x):
+        system('start LeagueClient.exe --allow-multiple-clients')
+
+
 def MultipleClients():
     system('cls')
-    print('===================================================')
-    print('[1] Default Path (C:/Riot Games/League of Legends/)')
-    print('[2] Custom Path                                   ')
-    print('[3] Return to menu')
-    print('===================================================')
+    print('[IRF TOOL] How many clients do you want do open?')
     print()
-    path = int(input('[IRF TOOL]: '))
+    clients = int(input('[IRF TOOL]: '))
+    system('cls')
+    print('[IRF TOOL] Opening {} new clients.'.format(clients))
+    getPath = api.get('/data-store/v1/install-dir').json()
+    chdir('{}'.format(getPath))
+    OpenClient(clients)
+    system('pause')
+    Main()
 
-    if path == 1:
-        system('cls')
-        print('[IRF TOOL] Opening a new Client')
-        chdir('C:/Riot Games/League of Legends/')
-        system('start LeagueClient.exe --allow-multiple-clients')
-        print()
-        system('pause')
-        MultipleClients()
-    elif path == 2:
-        system('cls')
-        custompath = str(input('Insert custom League Folder Path (ex: D:/Riot Games/League of Legends): '))
-        print('[IRF TOOL] Opening a new Client')
-        chdir(custompath)
-        system('start LeagueClient.exe --allow-multiple-clients')
-        print()
-        system('pause')
-        MultipleClients()
-    elif path == 3:
-        Main()
-    else:
-        MultipleClients()
-def ChampSelectSystem():
-    pass
         
 def CopyFriends():
     system('cls')
@@ -194,12 +180,7 @@ def Practice(): # Add more bots to practice tool
     else:
         print('[IRF TOOL] An error ocurred.')
         Main()
-# def Instalock():
-#     data = api.patch('/lol-champ-select/v1/session/actions/1', {"championId": "1","completed": True})
-#     if data.status_code == 204:
-#         Main()
-#     else:
-#         Main()
+
 def IconChanger(): # Icon Changer (chinese icons)
     system('cls')
     print('[IRF TOOL] All icons: https://gonext.today/blog/explorer/icon')
@@ -803,10 +784,9 @@ def Main():
             print('[2] Practice Tool (more bots)   ')
             print('[3] Remove all friends          ')
             print('[4] Copy Friend                 ')
-            print('[5] Multiple Clients')
+            print('[5] Multiple Clients            ')
             print('[6] Previous Page               ')
-            print('[7] Next Page                   ')
-            print('[8] Exit')
+            print('[7] Exit')
             print('================================')
             choice2 = int(input('[IRF TOOL]: '))
             if choice2 == 1:
@@ -820,13 +800,8 @@ def Main():
             elif choice2 == 5:
                 MultipleClients()
             elif choice2 == 6:
-                Main()
+                Main() 
             elif choice2 == 7:
-                system('cls')
-                print('[IRF TOOL] Coming soon...')
-                system('pause')
-                Main()
-            elif choice2 == 8:
                 system('exit')
             # elif choice2 == 2:
             #     Instalock()
