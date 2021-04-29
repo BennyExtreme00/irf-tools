@@ -13,6 +13,68 @@ disable_warnings()
 
 api = api.LeagueOfLegendsClientAPI()
 
+def WatermarkAram():
+    getCurrentSummoner = api.get('/lol-summoner/v1/current-summoner').json()
+    summoner = getCurrentSummoner["displayName"]
+    champSelect = api.get('/lol-champ-select/v1/session').json()
+    champSelect2 = api.get('/lol-chat/v1/me').json()
+    chatId = champSelect["chatDetails"]["chatRoomName"]
+    platformId = champSelect2["platformId"].lower()
+    fixedId = "@champ-select." + platformId + '.'
+    lobbyChatId = chatId.replace("@champ-select.", fixedId)
+    if "@sec" in chatId:
+        lobbyChatId = lobbyChatId.replace("@sec.", fixedId)
+    
+    boostactived = api.post('/lol-chat/v1/conversations/' + lobbyChatId + '/messages', {
+        "body": "\n" + summoner + " activated ARAM BOOST using IRF Tool.",
+        "fromSummonerId" : getCurrentSummoner["summonerId"],
+        "isHistorical" : False,
+        "type" : "chat"
+    })
+    github1 = api.post('/lol-chat/v1/conversations/' + lobbyChatId + '/messages', {
+        "body": "\nhttps://github.com/flowd1337/irf-tool",
+        "fromSummonerId" : getCurrentSummoner["summonerId"],
+        "isHistorical" : False,
+        "type" : "chat"
+    })
+    github2 = api.post('/lol-chat/v1/conversations/' + lobbyChatId + '/messages', {
+        "body": "\nhttps://github.com/flowd1337/irf-tool",
+        "fromSummonerId" : getCurrentSummoner["summonerId"],
+        "isHistorical" : False,
+        "type" : "chat"
+    })
+    github3 = api.post('/lol-chat/v1/conversations/' + lobbyChatId + '/messages', {
+        "body": "\nhttps://github.com/flowd1337/irf-tool",
+        "fromSummonerId" : getCurrentSummoner["summonerId"],
+        "isHistorical" : False,
+        "type" : "chat"
+    })
+def AramBoost():
+    system('cls && color b')
+    champSelect = api.get('/lol-champ-select/v1/session')
+    if champSelect.status_code == 404:
+        print("[IRF TOOL] You are not in a champion select.")
+    else:
+        data = api.get('/lol-lobby/v2/lobby').json()
+        partyId = data["partyId"]
+        champSelect = api.get('/lol-champ-select/v1/session').json()
+        if champSelect["isCustomGame"] == True:
+            print("[IRF TOOL] You can't use Aram Boost in custom game.")
+            system('pause')
+            Main()
+        else:
+            print('[IRF TOOL] Press F8 to use Aram Boost')
+            wait('f8')
+            boost = api.postBoost('/lol-login/v1/session/invoke?destination=lcdsServiceProxy&method=call', 'args=["{}", "teambuilder-draft", "activateBattleBoostV1", ""]'.format(partyId))
+            if boost.status_code == 200:
+                system('cls')
+                print('[IRF TOOL] Aram boost purchased.')
+                WatermarkAram()
+                system('pause')
+                Main()
+            else:
+                print('[IRF TOOL] An error ocurred.')
+
 def OpenClient(x):
     for clients in range(x):
         system('start LeagueClient.exe --allow-multiple-clients')
@@ -762,8 +824,9 @@ def Main():
         print('[3] Icon Changer (29 to 78)     ')
         print('[4] Icon Changer (client-only)  ')
         print('[5] Change Profile Background   ')
-        print('[6] Next Page                   ')
-        print('[7] Exit                        ')
+        print('[6] Aram Boost                  ')
+        print('[7] Next Page                   ')
+        print('[8] Exit                        ')
         print('================================')
 
         choice = int(input('[IRF TOOL]: '))
@@ -778,9 +841,11 @@ def Main():
         elif choice == 5:
             BackgroundChanger()
         elif choice == 6:
+            AramBoost()
+        elif choice == 7:
             system('cls')
             print('============IRF TOOL============')
-            print('[1] Rank Changer                ')
+            print('[1] Rank  Changer                ')
             print('[2] Practice Tool (more bots)   ')
             print('[3] Remove all friends          ')
             print('[4] Copy Friend                 ')
@@ -805,7 +870,7 @@ def Main():
                 system('exit')
             # elif choice2 == 2:
             #     Instalock()
-        elif choice == 7:
+        elif choice == 8:
             system('exit')
         else:
             Main()
