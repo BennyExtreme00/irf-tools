@@ -7,6 +7,7 @@
 ![alt text](https://cdn.flowd1337.repl.co/images/demonstration.gif "Demonstration")
 
 # Features 🎈
+- Aram Boost (free aram skin + 200be bonus)
 - Background Changer (Changes Profile Skin Background)
 - Rank Changer (SoloQ, Flex, 3X3, TFT)
 - Status Changer (Bypass Character Limit)
