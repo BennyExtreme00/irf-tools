@@ -1,4 +1,4 @@
-#Credits to github.com/nycholassousa/
+
 
 import base64
 import psutil
@@ -48,7 +48,20 @@ class LeagueOfLegendsClientAPI(object):
             headers={"Authorization": "Basic " + self.password},
             json=json
         )
-
+    def postBoost(self, path, json=None):
+        return requests.post(
+            self.protocol + "://127.0.0.1:" + self.port + path,
+            verify=False,
+            headers={"Authorization": "Basic " + self.password},
+            params=json
+        )
+    def postNick(self, path, json=None):
+        return requests.post(
+            self.protocol + "://127.0.0.1:" + self.port + path,
+            verify=False,
+            headers={"Authorization": "Basic " + self.password},
+            params=json
+        )
     def put(self, path, json=None):
         return requests.put(
             self.protocol + "://127.0.0.1:" + self.port + path,
