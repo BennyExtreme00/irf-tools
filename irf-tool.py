@@ -14,6 +14,7 @@ disable_warnings()
 api = api.LeagueOfLegendsClientAPI()
 
 def WatermarkAram():
+    #Aram boost
     getCurrentSummoner = api.get('/lol-summoner/v1/current-summoner').json()
     summoner = getCurrentSummoner["displayName"]
     champSelect = api.get('/lol-champ-select/v1/session').json()
