@@ -152,7 +152,7 @@ def DeleteFriends():
 
 
 def Avaibility(): # Change avaibility 
-    system('cls'    )
+    system('cls')
     print('=====================')
     print('[1] Online           ')
     print('[2] Away             ')
