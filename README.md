@@ -1,5 +1,4 @@
 # IRF TOOL: A Python League Tool 🐍
-# I'm selling Dodge exploit working in all regions and updated to patch 11.12 send me a message on discord to buy flowd#6291
 ## [Click Here](https://cdn.flowd1337.repl.co/downloads/irf_tool_1.3.1.zip) to Download Latest Version
 
 ## [Click Here](https://github.com/flowd1337/irf-tool/releases/) to see All Releases
