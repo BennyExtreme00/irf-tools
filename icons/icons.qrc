@@ -1,0 +1,35 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>ask-round-button.png</file>
+    <file>user3.png</file>
+    <file>checkmark.png</file>
+    <file>sniper.png</file>
+    <file>sniper (1).png</file>
+    <file>challenger_1.png</file>
+    <file>leftarrow.png</file>
+    <file>right-arrow.png</file>
+    <file>right-arrow.png</file>
+    <file>rightarrow.png</file>
+    <file>layers.png</file>
+    <file>lock2.png</file>
+    <file>lock.png</file>
+    <file>misc2.png</file>
+    <file>misc.png</file>
+    <file>infinity2.png</file>
+    <file>infinity.png</file>
+    <file>home5.png</file>
+    <file>home5.png</file>
+    <file>home4.png</file>
+    <file>home2.png</file>
+    <file>HOME3.png</file>
+    <file>minimize-btn.png</file>
+    <file>close-btn1.png</file>
+    <file>division3.png</file>
+    <file>division2.png</file>
+    <file>division.png</file>
+    <file>LOGO2.jpg</file>
+    <file>logo.jpg</file>
+    <file>profile.png</file>
+    <file>profile2.png</file>
+  </qresource>
+</RCC>
