@@ -422,11 +422,17 @@ class MainWindow(QMainWindow):
             if len(all_friends[i]["name"]) <= 16 and len(all_friends[i]["name"]) > 3:
                 self.ui.friendList.clear()
                 friend_list.append(all_friends[i]["name"])
+            if countFriends == 0:
+                friend_list.clear()
+                self.ui.friendList.clear()
         friend_list.sort()
             
         for i in range(len(friend_list)):
-            self.ui.friendList.addItem(friend_list[i])
-    
+            if countFriends == 0:
+                friend_list.clear()
+                self.ui.friendList.clear()
+            else:
+                self.ui.friendList.addItem(friend_list[i])
     def hide_lanes(self):
         if self.ui.laneSelector.currentIndex() == 0:
             self.ui.previousLaneBtn.setCursor(QCursor(Qt.ArrowCursor))
