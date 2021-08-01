@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IRFTool</class>
+ <widget class="QMainWindow" name="IRFTool">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>721</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="instalockBg">
+    <property name="geometry">
+     <rect>
+      <x>-11</x>
+      <y>-1</y>
+      <width>821</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(46, 51, 72);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="instalockBlindFrame">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>221</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="instaBlindPickLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>9</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(28, 146, 214);
+font: 87 12pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Instalock (Blind Pick)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="championLockB">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>60</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 19, 35);
+color: rgb(28, 146, 214);
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Champion to lock</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="instalockBlindLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>221</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(28, 146, 214);
+font: 87 9pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Champion</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="instalockLaneLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>221</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(28, 146, 214);
+font: 87 9pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Lane</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="instalockManagerB">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="startBlind">
+       <widget class="QPushButton" name="startBtnB">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>0</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font: 87 8pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>START</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="stopBLind">
+       <widget class="QPushButton" name="stopBtnB">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>0</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font: 87 8pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>STOP</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QStackedWidget" name="laneSelector">
+      <property name="geometry">
+       <rect>
+        <x>69</x>
+        <y>120</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="none_lane">
+       <widget class="QLabel" name="noneLabel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(28, 146, 214);
+font: 87 11pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>NONE</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="toplane">
+       <widget class="QLabel" name="topLabel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>-5</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(28, 146, 214);
+font: 87 11pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>TOP</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="jungle">
+       <widget class="QLabel" name="jungleLabel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>-5</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(28, 146, 214);
+font: 87 11pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>JUNGLE</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="mid">
+       <widget class="QLabel" name="midLabel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>-5</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(28, 146, 214);
+font: 87 11pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>MID</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="adc">
+       <widget class="QLabel" name="adcLabel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>-5</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(28, 146, 214);
+font: 87 11pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>ADC</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="support">
+       <widget class="QLabel" name="supportLabel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>-5</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(28, 146, 214);
+font: 87 11pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>SUP</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>130</y>
+        <width>21</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="previousLaneBtn">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>130</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/icons/leftarrow.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="nextLaneBtn">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>130</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/icons/right-arrow.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="autoAcceptFrame">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>30</y>
+       <width>221</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="autoAcceptLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>9</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(28, 146, 214);
+font: 87 12pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Auto Accept</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="autoAcceptManager">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="startAccept">
+       <widget class="QPushButton" name="startAcceptBtn">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>0</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font: 87 8pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>START</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="stopAccept">
+       <widget class="QPushButton" name="stopAcceptBtn">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>0</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font: 87 8pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>STOP</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="autoPlayAgainFrame">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>130</y>
+       <width>221</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="autoPlayAgainLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>9</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(28, 146, 214);
+font: 87 12pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Auto Play Again</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="autoPlayAgainManager">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="startPlayAg">
+       <widget class="QPushButton" name="startPlayAgBtn">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>0</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font: 87 8pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>START</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="stopPlayAg">
+       <widget class="QPushButton" name="stopPlayAgBtn">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>0</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font: 87 8pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>STOP</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

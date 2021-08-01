@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IRFTool</class>
+ <widget class="QMainWindow" name="IRFTool">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>719</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="friendsPage">
+   <widget class="QFrame" name="friendsBg">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>721</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(46, 51, 72);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="friendsManagerFrame">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>40</y>
+       <width>291</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+border-radius: 8px;
+background-color: rgba(19, 28, 53, 200);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="refreshFriendsBtn">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>445</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>REFRESH</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="topBarFriends">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>291</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(31, 34, 49);
+background-color: rgb(18, 26, 45);
+border-radius: 10px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="inviFrameFriends">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>9</y>
+         <width>21</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QFrame" name="inviFrameFriends2">
+       <property name="geometry">
+        <rect>
+         <x>275</x>
+         <y>10</y>
+         <width>31</width>
+         <height>80</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="friendManagerLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>0</y>
+         <width>251</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 87 9pt &quot;Segoe UI Black&quot;;
+
+color: rgb(28, 146, 214);</string>
+       </property>
+       <property name="text">
+        <string>Friends Manager</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QListWidget" name="friendList">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>30</y>
+        <width>261</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget {
+	background-color: rgba(18, 26, 45, 190);
+	border-radius: 0px;
+}
+
+QListWidget::item {
+	font: 87 9pt &quot;Segoe UI Black&quot;;
+	color: rgb(28, 146, 214);
+
+}</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>140</y>
+       <width>191</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;
+font: 87 9pt &quot;Segoe UI Black&quot;;
+
+color: rgb(28, 146, 214);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="acceptAllFriendsBtn">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>80</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>ACCEPT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="declineAllFriendsBtn">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>150</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>DECLINE</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeAllFriendsBtn">
+      <property name="geometry">
+       <rect>
+        <x>49</x>
+        <y>215</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>REMOVE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="acceptAllFriendsLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 87 9pt &quot;Segoe UI Black&quot;;
+
+color: rgb(28, 146, 214);</string>
+      </property>
+      <property name="text">
+       <string>Accept All Friend Requests</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="declineAllFriendsLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>120</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decline All Friend Requests</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="removeAllFriendsLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>191</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remove All Friends</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="featuresLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-1</y>
+        <width>191</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 87 10pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Features</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="friendSelected">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>100</y>
+       <width>181</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;
+font: 87 9pt &quot;Segoe UI Black&quot;;
+
+color: rgb(28, 146, 214);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="friendNameLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-1</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 87 10pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>narkot niclas</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="copyIconBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>80</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>COPY</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="copyStatusBtn">
+      <property name="geometry">
+       <rect>
+        <x>39</x>
+        <y>150</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>COPY</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="banMessageBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>290</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>SEND</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="copyIconLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Copy Icon</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="copyStatusLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>120</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Copy Status</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="fakeBanLabel">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>260</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fake Ban Message</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="crashChatLabel">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>190</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Chat Crasher</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chatCrashBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>220</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+	border-radius: 8px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+      </property>
+      <property name="text">
+       <string>CRASH</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

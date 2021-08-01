@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IRFTool</class>
+ <widget class="QMainWindow" name="IRFTool">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>719</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="toolTip">
+   <string>asdasd</string>
+  </property>
+  <property name="toolTipDuration">
+   <number>10</number>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(46, 52, 72);</string>
+  </property>
+  <widget class="QWidget" name="miscPage">
+   <widget class="QFrame" name="instaquit_frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="instaQuitLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>221</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;
+color: rgb(28, 146, 237);</string>
+     </property>
+     <property name="text">
+      <string>Insta Quit</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="instaQuitManager">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="instaquit_enable">
+      <widget class="QPushButton" name="enableInstaQuitBtn">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+       </property>
+       <property name="text">
+        <string>ENABLE</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="instaquit_disable">
+      <widget class="QPushButton" name="disableInstaQuitBtn">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+       </property>
+       <property name="text">
+        <string>DISABLE</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="auto_runes_frame">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>40</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="auto_runes_label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>221</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;
+color: rgb(28, 146, 237);</string>
+     </property>
+     <property name="text">
+      <string>Auto Runes</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="runesManager">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="runes_import_enable">
+      <widget class="QPushButton" name="enableAutoRunesBtn">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+       </property>
+       <property name="text">
+        <string>ENABLE</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="runes_import_disable">
+      <widget class="QPushButton" name="disableAutoRunesBtn">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+       </property>
+       <property name="text">
+        <string>DISABLE</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="multi_search_frame">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>40</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="multi_search_label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>221</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;
+color: rgb(28, 146, 237);</string>
+     </property>
+     <property name="text">
+      <string>OP.GG Multi Search</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="multiSearchManager">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="multi_search_enable">
+      <widget class="QPushButton" name="enableMultiSearchBtn">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+       </property>
+       <property name="text">
+        <string>ENABLE</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="multi_search_disable">
+      <widget class="QPushButton" name="disableMultiSearchBtn">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+       </property>
+       <property name="text">
+        <string>DISABLE</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="mutli_client_frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="multiClientLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>221</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;
+color: rgb(28, 146, 237);</string>
+     </property>
+     <property name="text">
+      <string>Multi Clients</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="openClientBtn">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>OPEN</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="practice_tool_frame">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>180</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(19, 28, 53);
+border-radius: 10px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="practiceToolLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>221</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;
+color: rgb(28, 146, 237);</string>
+     </property>
+     <property name="text">
+      <string>Practice Tool+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="createPracticeToolBtn">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	font: 87 9pt &quot;Arial Black&quot;;
+	color: rgb(28, 146, 214);
+	background-color: rgb(16, 24, 45);
+
+}
+
+QPushButton:hover {
+	
+	background-color: rgba(17, 25, 47, 190);
+}
+
+QPushButton:pressed {
+	background-color: rgb(16, 24, 45);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>CREATE </string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
