@@ -1,4 +1,4 @@
-# IRF Tools - Python League Tool 🐍
+# IRF Tools | Python League Tool 🐍
 
 ### [Click Here](http://irftool.tk) to Download Latest Version
 ### [Click Here](http://irftools.tk) to Join in our Discord Community
