@@ -1,6 +1,7 @@
 # IRF Tools | Python League Tool 🐍
 
-### Search Icon ID by Name: https://irftools.herokuapp.com/icons/
+### Get Icon ID by Name: https://irftools.herokuapp.com/icons/
+### Get Skin Background ID by Name: https://irftools.herokuapp.com/backgrounds/
 ### [Click Here](http://irftool.tk) to Download Latest Version
 ### [Click Here](http://irftools.tk) to Join in our Discord Community
 
