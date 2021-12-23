@@ -22,7 +22,7 @@
 
 > **Exploits Page:**
 
-- Free Tristana Riot Girl Exploit (free skin + champion).
+- <s>Free Tristana Riot Girl Exploit (free skin + champion).</s> (PATCHED)
 
 > **Instalocker Page:**
 
