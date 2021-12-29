@@ -1,4 +1,7 @@
 [![Github All Releases](https://img.shields.io/github/downloads/flooowd/irf-tools/total.svg)]()
+[![Github Stars](https://img.shields.io/github/stars/flooowd/irf-tools)]()
+[![Github Forks](https://img.shields.io/github/forks/flooowd/irf-tools)]()
+[![Github Issues](https://img.shields.io/github/issues/flooowd/irf-tools)]()
 
 # IRF Tools | Python League Tool 🐍
 
