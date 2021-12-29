@@ -2,7 +2,6 @@
 [![Github Stars](https://img.shields.io/github/stars/flooowd/irf-tools)]()
 [![Github Forks](https://img.shields.io/github/forks/flooowd/irf-tools)]()
 [![Github Issues](https://img.shields.io/github/issues/flooowd/irf-tools)]()
-[![Follow Twitter ](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fflooowd)]()
 
 # IRF Tools | Python League Tool 🐍
 
