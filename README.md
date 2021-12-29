@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/flooowd/irf-tools/total.svg)]()
+
 # IRF Tools | Python League Tool 🐍
 
 ### Get Icon ID by Name: https://irftools.club/icons/
